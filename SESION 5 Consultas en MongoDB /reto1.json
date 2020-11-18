@@ -1,0 +1,36 @@
+{
+    "reto 1": [
+        {
+            "instrucciones": "Propiedades que no permitan fiestas.",
+            "solucion 1": {
+                "filter": {
+                    "house_rules": "/(no party)|(no parties)/i"
+                }
+            }
+        },
+        {
+            "instrucciones": "Propiedades que admitan mascotas.",
+            "solucion 2": {
+                "filter": {
+                    "house_rules": "/pets allowed/i"
+                }
+            }
+        },
+        {
+            "instrucciones": "Propiedades que no permitan fumadores.",
+            "solucion 3": {
+                "filter": {
+                    "house_rules": "/(no smokers)|(no smoking)/i"
+                }
+            }
+        },
+        {
+            "instrucciones": "Propiedades que no permitan fiestas ni fumadores.",
+            "solucion 4": {
+                "filter": {
+                    "house_rules": "/(no smoking.*no part(y|(s)|ies))|(no part(y|(s)|ies).*no smoking)/i"
+                }
+            }
+        }
+    ]
+}

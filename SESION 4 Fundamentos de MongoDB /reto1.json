@@ -1,0 +1,27 @@
+{
+    "reto 1": [
+        {
+            "instrucciones":"Fecha, nombre y texto de cada comentario.",
+            "respuesta 1": {
+                "date": 1,
+                "name": 1,
+                "text": 1
+            }
+        },
+        {
+            "instrucciones":"Título, elenco y año de cada película.",
+            "respuesta 2": {
+                "titulo": 1,
+                "cast": 1,
+                "year": 1
+            }
+        },
+        {
+            "instrucciones":"Nombre y contraseña de cada usuario.",
+            "respuesta 3": {
+                "name": 1,
+                "password": 1
+            }
+        }
+    ]
+}

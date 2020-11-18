@@ -1,0 +1,150 @@
+    {
+        "ejercicios": [
+            {
+                "1": {
+                    "instrucciones": "Obtén los datos de contacto de cada compañía.",
+                    "query": {
+                        "project": {
+                            "name": 1,
+                            "email_address": 1,
+                            "phone_number": 1
+                        }
+                    }
+                }
+            },
+            {
+                "2": {
+                    "instrucciones": "Obtén la fuente de cada tweet. No hay colección con tweets.",
+                    "query": {}
+                }
+            },
+            {
+                "3": {
+                    "instrucciones": "Obtén el nombre de todas las compañias fundadas en octubre.",
+                    "query": {
+                        "filter": {
+                            "founded_month": 10
+                        },
+                        "project": {
+                            "name": 1
+                        }
+                    }
+                }
+            },
+            {
+                "4": {
+                    "instrucciones": "Obtén el nombre de todas las compañías fundadas en 2008.",
+                    "query": {
+                        "filter": {
+                            "founded_year": 2008
+                        },
+                        "project": {
+                            "name": 1
+                        }
+                    }
+                }
+            },
+            {
+                "5": {
+                    "instrucciones": "Obtén todos los post del autor machine.",
+                    "query": {
+                        "filter": {
+                            "author": "machine"
+                        }
+                    }
+                }
+            },
+            {
+                "6": {
+                    "instrucciones": "Obtén todos los tweets provenientes de la web.",
+                    "query": "no veo documentos con tweets???"
+                }
+            },
+            {
+                "7": {
+                    "instrucciones": "Obtén todas las compañías fundadas en octubre del 2008. ",
+                    "query": {
+                        "filter": {
+                            "founded_year": 2008,
+                            "founded_month": 10
+                        }
+                    }
+                }
+            },
+            {
+                "8": {
+                    "instrucciones": "Obtén todas las compañias con más de 50 empleados.",
+                    "query": {
+                        "filter": {
+                            "number_of_employees": {
+                                "$gt": 50
+                            }
+                        },
+                        "sort": {
+                            "number_of_employees": 1
+                        }
+                    }
+                }
+            },
+            {
+                "9": {
+                    "instrucciones": "Obtén las historias con número de comentarios entre 10 y 30. ",
+                    "query": {
+                        "filter": {
+                            "$and": [
+                                {
+                                    "comment_number": {
+                                        "$gte": 10
+                                    }
+                                },
+                                {
+                                    "comment_number": {
+                                        "$lte": 30
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "10": {
+                    "instrucciones": "Obtén la empresa con el menor número de empleados.",
+                    "query": {
+                        "filter": {
+                            "number_of_employees": {
+                                "$ne": null
+                            }
+                        },
+                        "sort": {
+                            "number_of_employees": 1
+                        },
+                        "limit": 1
+                    }
+                }
+            },
+            {
+                "11": {
+                    "instrucciones": "Obtén la empresa con el mayor número de empleados.",
+                    "query": {
+                        "sort": {
+                            "number_of_employees": -1
+                        },
+                        "limit": 1
+                    }
+                }
+            },
+            {
+                "12": {
+                    "instrucciones": "Obtén la historia más comentada.(Colección removida)",
+                    "query": {}
+                }
+            },
+            {
+                "13": {
+                    "instrucciones": "Obtén la historia menos comentada.(Colección removida)",
+                    "query": {}
+                }
+            }
+        ]
+    }
