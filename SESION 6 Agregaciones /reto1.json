@@ -1,0 +1,38 @@
+{
+    "reto 1": {
+        "instrucciones": "Con base en el ejemplo 1, modifica el agrupamiento para que muestre el costo promedio por habitación por país de las propiedades de tipo casa.",
+        "solucion": [
+            {
+                "$match": {
+                    "property_type": "House",
+                    "bedrooms": {
+                        "$gte": 1
+                    }
+                }
+            },
+            {
+                "$addFields": {
+                    "costo_recamara": {
+                        "$divide": [
+                            "$price",
+                            "$bedrooms"
+                        ]
+                    }
+                }
+            },
+            {
+                "$group": {
+                    "_id": "$address.country",
+                    "num_recamaras": {
+                        "$sum": 1
+                    },
+                    "promedio_costo_recamaras": {
+                        "$sum": {
+                            "$avg": "$costo_recamara"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

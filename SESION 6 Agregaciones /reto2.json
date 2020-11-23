@@ -1,0 +1,38 @@
+{
+    "reto 2": {
+        "instrucciones": "Usando las colecciones comments y users, se requiere conocer el correo y contraseña de cada persona que realizó un comentario. Construye un pipeline que genere como resultado estos datos.",
+        "solucion": [
+            [
+                {
+                    "$lookup": {
+                        "from": "comments",
+                        "localField": "email",
+                        "foreignField": "email",
+                        "as": "comentarios"
+                    }
+                },
+                {
+                    "$addFields": {
+                        "num_comentarios": {
+                            "$size": "$comentarios"
+                        }
+                    }
+                },
+                {
+                    "$match": {
+                        "num_comentarios": {
+                            "$gte": 1
+                        }
+                    }
+                },
+                {
+                    "$project": {
+                        "email": 1,
+                        "password": 1,
+                        "_id": 0
+                    }
+                }
+            ]
+        ]
+    }
+}
